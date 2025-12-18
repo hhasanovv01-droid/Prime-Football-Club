@@ -1,95 +1,130 @@
-import { motion } from "framer-motion"; import { Card, CardContent } from "@/components/ui/card"; import { Button } from "@/components/ui/button"; import { Trophy, Users, Calendar } from "lucide-react";
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Prime FC</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 40px;
+    }
+    nav a {
+      color: #ccc;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+    section {
+      padding: 60px 40px;
+    }
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #111;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+    }
+    .number {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #333;
+      margin: 0 auto 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+    }
+    button {
+      background: white;
+      color: black;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
 
-export default function PrimeFCSite() { const players = [ { name: "Hasanov", number: 7, position: "Нападающий" }, { name: "Mehraj", number: 8, position: "Защитник" }, { name: "Bashirov", number: 10, position: "Полузащитник" }, { name: "Qafarzade", number: 5, position: "Защитник" }, ];
+<header>
+  <h1>PRIME FC</h1>
+  <nav>
+    <a href="#team">Команда</a>
+    <a href="#matches">Матчи</a>
+    <a href="#join">Вступить</a>
+  </nav>
+</header>
 
-const matches = [ "Prime FC 2–2 Aura FC", "Prime FC 1–4 Aura FC", "Prime FC 2–3 Aura FC", ];
+<section class="hero">
+  <h2>Мы стремимся быть в своём прайме</h2>
+  <p>Prime FC — команда, основанная на вере, дисциплине и желании побеждать.</p>
+  <button>Присоединиться</button>
+</section>
 
-return ( <div className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white"> {/* Header */} <header className="flex items-center justify-between px-8 py-6"> <h1 className="text-3xl font-bold tracking-wide">PRIME FC</h1> <nav className="space-x-6 text-sm"> <a href="#team" className="hover:text-gray-300">Команда</a> <a href="#matches" className="hover:text-gray-300">Матчи</a> <a href="#join" className="hover:text-gray-300">Вступить</a> </nav> </header>
-
-{/* Hero */}
-  <section className="flex flex-col items-center text-center px-6 py-24">
-    <motion.h2
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className="text-5xl font-extrabold mb-6"
-    >
-      Мы стремимся быть в своём прайме
-    </motion.h2>
-    <p className="max-w-2xl text-gray-300 mb-10">
-      Prime FC — команда, основанная на вере, дисциплине и желании побеждать.
-    </p>
-    <Button className="rounded-2xl px-8 py-6 text-lg">Присоединиться</Button>
-  </section>
-
-  {/* Features */}
-  <section className="grid md:grid-cols-3 gap-6 px-8 py-16">
-    <Card className="bg-zinc-900 rounded-2xl shadow-lg">
-      <CardContent className="p-6">
-        <Users className="mb-4" />
-        <h3 className="text-xl font-semibold mb-2">Командный дух</h3>
-        <p className="text-gray-400 text-sm">Мы едины на поле и за его пределами.</p>
-      </CardContent>
-    </Card>
-    <Card className="bg-zinc-900 rounded-2xl shadow-lg">
-      <CardContent className="p-6">
-        <Trophy className="mb-4" />
-        <h3 className="text-xl font-semibold mb-2">Характер</h3>
-        <p className="text-gray-400 text-sm">Играем до финального свистка.</p>
-      </CardContent>
-    </Card>
-    <Card className="bg-zinc-900 rounded-2xl shadow-lg">
-      <CardContent className="p-6">
-        <Calendar className="mb-4" />
-        <h3 className="text-xl font-semibold mb-2">Развитие</h3>
-        <p className="text-gray-400 text-sm">Каждая игра — шаг вперёд.</p>
-      </CardContent>
-    </Card>
-  </section>
-
-  {/* Team */}
-  <section id="team" className="px-8 py-20">
-    <h2 className="text-3xl font-bold mb-10">Состав Prime FC</h2>
-    <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-      {players.map((p) => (
-        <Card key={p.number} className="bg-zinc-900 rounded-2xl">
-          <CardContent className="p-6 text-center">
-            <div className="h-24 w-24 mx-auto rounded-full bg-zinc-700 mb-4 flex items-center justify-center text-xl font-bold">
-              {p.number}
-            </div>
-            <h4 className="font-semibold">{p.name}</h4>
-            <p className="text-gray-400 text-sm">{p.position}</p>
-          </CardContent>
-        </Card>
-      ))}
+<section id="team">
+  <h2>Состав Prime FC</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="number">7</div>
+      <h3>Hasanov</h3>
+      <p>Нападающий</p>
     </div>
-  </section>
-
-  {/* Matches */}
-  <section id="matches" className="px-8 py-20 bg-zinc-950">
-    <h2 className="text-3xl font-bold mb-8">Последние матчи</h2>
-    <div className="space-y-4 max-w-md">
-      {matches.map((m, i) => (
-        <div key={i} className="bg-zinc-900 rounded-xl px-6 py-4 text-gray-300">
-          {m}
-        </div>
-      ))}
+    <div class="card">
+      <div class="number">8</div>
+      <h3>Mehraj</h3>
+      <p>Защитник</p>
     </div>
-  </section>
+    <div class="card">
+      <div class="number">10</div>
+      <h3>Bashirov</h3>
+      <p>Полузащитник</p>
+    </div>
+    <div class="card">
+      <div class="number">5</div>
+      <h3>Qafarzade</h3>
+      <p>Защитник</p>
+    </div>
+  </div>
+</section>
 
-  {/* Join */}
-  <section id="join" className="text-center px-6 py-24">
-    <h2 className="text-4xl font-bold mb-6">Стань частью Prime FC</h2>
-    <p className="text-gray-400 mb-6">Верь в себя. Верь в Prime FC.</p>
-    <p className="text-lg font-semibold mb-10">Forza Prime! Sempre Prime!</p>
-    <Button className="rounded-2xl px-10 py-6 text-lg">Подать заявку в команду</Button>
-    <p className="text-gray-500 text-sm mt-6">Хочешь присоединиться? Напиши нам и докажи, что ты достоин играть за Prime FC.</p>
-  </section>
+<section id="matches">
+  <h2>Последние матчи</h2>
+  <p>Prime FC 2–2 Aura FC</p>
+  <p>Prime FC 1–4 Aura FC</p>
+  <p>Prime FC 2–3 Aura FC</p>
+</section>
 
-  {/* Footer */}
-  <footer className="text-center text-gray-500 text-sm py-6">
-    © 2025 Prime FC. Все права защищены.
-  </footer>
-</div>
+<section id="join">
+  <h2>Стань частью Prime FC</h2>
+  <p>Forza Prime! Sempre Prime!</p>
+  <button>Подать заявку</button>
+</section>
 
-); }
+<footer>
+  © 2025 Prime FC. Все права защищены.
+</footer>
+
+</body>
+</html>
